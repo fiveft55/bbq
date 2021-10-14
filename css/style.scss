@@ -334,7 +334,7 @@ section.vtour {
     // }
     span {
       //width: 848.55px;
-      width: 100%;
+      width: 82%;
       height: 450px;
       border: 1.6px solid $highlight;
       //
@@ -343,6 +343,10 @@ section.vtour {
       left: 50%;
       top: 0;
       transform: translate(-50%, 0);
+      //
+      @include max-resolution($mobile) {
+        width: 100%;
+      }
     }
   }
 }
