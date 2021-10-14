@@ -1,5 +1,7 @@
 // Style for BBQ & Grill //
 //
+// @imports
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Playfair+Display:wght@700&family=Rajdhani:wght@600&display=swap");
 // __variables
 
 /* Colors */
@@ -11,14 +13,14 @@ $social: #00acee; //#4c68d7;
 $insta: #bc2a8d;
 
 /* Fonts */
-$logo: Rajdhani;
-$titleText: Gontserrat;
-$header: "Playfair Display";
-$text_font: "Open Sans";
+$logo: "Rajdhani", sans-serif;
+$titleText: "Montserrat", sans-serif;
+$header: "Playfair Display", serif;
+$text_font: "Open Sans", sans-serif;
 
 /* Desktop Variables */
 $text_res: 376px;
-$mobile: 576px; // mobiles and similar
+$mobile: 576px; //412px; //576px; // mobiles and similar
 $tablet: 768px; // Tablets and mini-pc
 $laptop: 992px; // Laptops and normal desktops
 $desktop: 1200px; //Large desktop
@@ -79,8 +81,7 @@ header {
   //height: 80px;
   //
   @include max-resolution($mobile) {
-    padding-left: 13% !important;
-    padding-right: 13% !important;
+    padding: 1em 0 5px 1em !important;
   }
 
   nav {
@@ -117,7 +118,7 @@ header {
       //border: 1px solid coral;
       padding: 0px 8px !important;
       @include max-resolution($mobile) {
-        padding: 0 6px !important;
+        padding: 0 4px !important;
       }
     }
   }
@@ -126,19 +127,31 @@ header {
 section.hero {
   //border: 1px solid coral;
   position: relative;
+  @include max-resolution($mobile) {
+    padding: 0 !important;
+  }
   div.image-container {
     img {
       height: 600px;
       width: 80%;
-      box-shadow: 10px 10px 40px $body;
+      //box-shadow: 10px 10px 40px $body;
+      @include max-resolution($mobile) {
+        padding: 0 !important;
+        width: 95%;
+        height: 440px;
+      }
     }
   }
   div.hero-header {
+    //border: 1px solid aliceblue;
     position: absolute;
     bottom: 0;
     left: 18%;
     transform: translate(0%, 47%); // horizontal and vertical
     //border: 1px solid white;
+    @include max-resolution($mobile) {
+      transform: translate(-18%, 47%);
+    }
 
     h3,
     h3 span {
@@ -151,8 +164,9 @@ section.hero {
       letter-spacing: 5px;
       @include max-resolution($mobile) {
         //color: red !important;
-        font-size: 3rem !important;
-        line-height: 60px;
+        font-size: 2.25rem !important;
+        line-height: 40px;
+        letter-spacing: 2.5px;
       }
     }
 
@@ -168,6 +182,10 @@ section.welcome {
   .welcome-text {
     //border: 1px solid green;
     width: 80%;
+    //
+    @include max-resolution($mobile) {
+      width: 100%;
+    }
 
     p {
       margin-top: 130px;
@@ -176,8 +194,9 @@ section.welcome {
       font-size: 1.25rem !important;
       word-spacing: 1px;
       @include max-resolution($mobile) {
-        margin-top: 100px;
+        margin-top: 80px;
         font-size: 17px !important;
+        padding: 0 1em;
         br {
           display: none;
         }
@@ -197,12 +216,16 @@ section.about {
     //border: 1px solid $highlight;
 
     @include max-resolution($mobile) {
-      padding-top: 40px;
+      padding-top: 30px;
+      width: 100%;
     }
 
     article {
       //border: 1px solid white;
       padding: 30px 10% 0 9%;
+      @include max-resolution($mobile) {
+        padding: 30px 1em;
+      }
 
       h5 {
         font-family: $titleText;
@@ -220,16 +243,15 @@ section.about {
       padding-right: 9%;
 
       @include max-resolution($mobile) {
-        padding-top: 30px;
-        padding-left: 9%;
+        padding-left: 1em;
       }
       img {
         width: 350px;
         height: 530px;
         //
         @include max-resolution($mobile) {
-          width: 310px;
-          height: 480px;
+          width: 280px;
+          height: 420px;
         }
       }
       .img-border {
@@ -244,15 +266,15 @@ section.about {
         height: 530px;
         //
         @include max-resolution($mobile) {
-          transform: translate(16%, 9%);
-          width: 310px;
-          height: 480px;
+          transform: translate(14%, 6%);
+          width: 280px;
+          height: 420px;
         }
       }
     }
   }
 }
-
+//
 //
 section.vtour {
   //border: 1px solid coral;
@@ -262,7 +284,8 @@ section.vtour {
     width: 80%;
     padding-top: 100px;
     @include max-resolution($mobile) {
-      padding-top: 80px;
+      padding-top: 60px;
+      width: 100%;
     }
     //margin: auto;
     h5 {
@@ -271,9 +294,15 @@ section.vtour {
       color: $highlight;
       text-transform: uppercase;
       padding: 40px 9% 20px 9%;
+      @include max-resolution($mobile) {
+        padding: 20px 16px;
+      }
     }
     p {
       padding: 0 9% 10px 9%;
+      @include max-resolution($mobile) {
+        padding: 0 0 0 1em;
+      }
     }
   }
   //
@@ -291,6 +320,9 @@ section.vtour {
       padding-left: 9%;
       padding-right: 9%;
       filter: grayscale(100%);
+      @include max-resolution($mobile) {
+        padding: 0;
+      }
     }
     // iframe {
     //   padding: 0 9%;
@@ -302,7 +334,7 @@ section.vtour {
     // }
     span {
       //width: 848.55px;
-      width: 82%;
+      width: 100%;
       height: 450px;
       border: 1.6px solid $highlight;
       //
@@ -320,14 +352,21 @@ section.menu {
   //border: 1px solid coral;
   padding-top: 100px;
   @include max-resolution($mobile) {
-    padding-top: 60px;
+    padding-top: 30px;
   }
   .menu-container {
     //border: 1px solid aliceblue;
     width: 80%;
+    @include max-resolution($mobile) {
+      width: 100%;
+      padding-top: 30px;
+    }
     //
     .menuHeader {
       padding: 40px 9% 20px 9%;
+      @include max-resolution($mobile) {
+        padding-left: 1em;
+      }
       h5 {
         font-family: $titleText;
         font-size: 1.563rem !important;
@@ -343,13 +382,17 @@ section.menu {
       padding-right: 9%;
       //border: 1px solid aliceblue;
       //
+      @include max-resolution($mobile) {
+        padding-left: 1em;
+      }
+      //
       .menu-image {
         //border: 2px solid green;
         padding-right: 30px;
         img {
           border: 1px solid $body_text;
           height: 350px;
-          width: 310px;
+          width: 280px;
         }
       }
       //
@@ -365,6 +408,7 @@ section.menu {
           //border: 1px solid white;
           @include max-resolution($mobile) {
             padding-top: 20px;
+            padding-right: 5px;
           }
           dt {
             color: $highlight;
@@ -416,23 +460,36 @@ section.menu {
 section.gallery {
   //border: 1px solid coral;
   .gallery-contain {
-    //border: 1px solid aliceblue;
+    //border: 1px solid rgb(7, 109, 192);
     width: 80%;
     padding-top: 100px;
+    @include max-resolution($mobile) {
+      width: 100%;
+      padding-top: 60px;
+    }
     //
     .gallery-header {
       padding: 0 9% 0 9%;
+      @include max-resolution($mobile) {
+        padding: 20px 1em;
+      }
       h5 {
         font-family: $titleText;
         font-size: 1.563rem !important;
         color: $highlight;
         text-transform: uppercase;
         padding-bottom: 40px;
+        @include max-resolution($mobile) {
+          padding-bottom: 10px;
+        }
       }
     }
     .gallery-image {
       padding: 0 9% 0 9%;
       //border: 1px solid coral;
+      @include max-resolution($mobile) {
+        padding: 0 1em;
+      }
       //
       img {
         height: 350px;
@@ -449,11 +506,18 @@ section.gallery {
 section.contact-us {
   //border: 1px solid coral;
   section.infoContact {
-    //border: 1px solid aliceblue;
+    //border: 1px solid rgb(0, 136, 255);
     width: 80%;
     padding-top: 100px;
+    @include max-resolution($mobile) {
+      width: 100%;
+      padding-top: 80px;
+    }
     .contact-header {
       padding: 0 9%;
+      @include max-resolution($mobile) {
+        padding: 0 1em;
+      }
       h5 {
         font-family: $titleText;
         font-size: 1.563rem !important;
@@ -465,11 +529,17 @@ section.contact-us {
     //
     .contact-details {
       padding: 0 9% 10px 9%;
+      @include max-resolution($mobile) {
+        padding: 0 0 10px 1em;
+      }
     }
     //
     section.gmap {
       padding: 0 9%;
       width: 100%;
+      @include max-resolution($mobile) {
+        padding: 0 1em;
+      }
       //
       .bdr {
         width: 50px;
@@ -503,10 +573,18 @@ footer {
   .ft-contain {
     padding-top: 50px;
     width: 80%;
-    //border: 1px solid aliceblue;
+    //border: 1px solid rgb(0, 135, 253);
+    //
+    @include max-resolution($mobile) {
+      padding-top: 20px;
+      width: 100%;
+    }
     //
     .copyright {
       padding-left: 9%;
+      @include max-resolution($mobile) {
+        padding-left: 1em;
+      }
       &:hover {
         cursor: default;
         color: $highlight;
@@ -515,14 +593,24 @@ footer {
     //
     .social-media {
       padding-right: 9%;
+      //border: 1px solid green;
+      @include max-resolution($mobile) {
+        padding: 0;
+      }
 
       ul {
+        //border: 1px solid hotpink;
         list-style: none;
+        @include max-resolution($mobile) {
+          padding: 5px 1em;
+        }
         li {
-          padding-left: 8px;
+          //border: 1px solid black;
+          padding: 0 4px;
+          margin-left: 4px;
 
           @include max-resolution($mobile) {
-            padding-left: 6px;
+            padding: 4px;
           }
           //
           &:hover {
