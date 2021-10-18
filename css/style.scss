@@ -24,7 +24,7 @@ $mobile: 576px; //412px; //576px; // mobiles and similar
 $tablet: 768px; // Tablets and mini-pc
 $laptop: 992px; // Laptops and normal desktops
 $desktop: 1200px; //Large desktop
-$custom: 990px;
+$custom: 1024px;
 
 /* Desktop Variables */
 
@@ -42,6 +42,12 @@ $custom: 990px;
   }
 }
 
+@mixin cus-resolution($max, $mini) {
+  @media (max-width: #{$max}) and (min-width: #{$mini}) {
+    @content;
+  }
+}
+
 /* Mixin using method @include max-resolution(){};*/
 
 // variables__
@@ -54,6 +60,9 @@ html {
   line-height: 1.875rem; // 30px
   color: $body_text;
   font-size: 1rem !important; //later after grid completion
+  @include cus-resolution($custom, $mobile) {
+    font-size: 15px !important;
+  }
 }
 body {
   background: $body !important;
@@ -132,13 +141,18 @@ section.hero {
   }
   div.image-container {
     img {
-      height: 600px;
+      height: 590px;
       width: 80%;
       //box-shadow: 10px 10px 40px $body;
       @include max-resolution($mobile) {
         padding: 0 !important;
         width: 95%;
         height: 440px;
+      }
+      //
+      @include cus-resolution($custom, $mobile) {
+        height: 440px;
+        width: 90%;
       }
     }
   }
@@ -168,6 +182,13 @@ section.hero {
         line-height: 40px;
         letter-spacing: 2.5px;
       }
+      //
+      @include cus-resolution($custom, $mobile) {
+        font-size: 3.8rem !important;
+        line-height: 70px;
+        letter-spacing: 3.5px;
+      }
+      //
     }
 
     h3 span {
@@ -193,6 +214,13 @@ section.welcome {
       //border: 1px solid aliceblue;
       font-size: 1.25rem !important;
       word-spacing: 1px;
+      //
+      @include cus-resolution($custom, $mobile) {
+        margin-top: 100px;
+        font-size: 17.5px !important;
+        word-spacing: 0px;
+      }
+      //
       @include max-resolution($mobile) {
         margin-top: 80px;
         font-size: 17px !important;
@@ -219,12 +247,18 @@ section.about {
       padding-top: 30px;
       width: 100%;
     }
+    @include cus-resolution($custom, $mobile) {
+      padding-top: 30px;
+    }
 
     article {
       //border: 1px solid white;
       padding: 30px 10% 0 9%;
       @include max-resolution($mobile) {
         padding: 30px 1em;
+      }
+      @include cus-resolution($custom, $mobile) {
+        padding-bottom: 30px;
       }
 
       h5 {
@@ -245,13 +279,21 @@ section.about {
       @include max-resolution($mobile) {
         padding-left: 1em;
       }
+      @include cus-resolution($custom, $mobile) {
+        padding-left: 9%;
+        padding-right: 0;
+      }
       img {
         width: 350px;
         height: 530px;
         //
         @include max-resolution($mobile) {
-          width: 280px;
+          width: 90%;
           height: 420px;
+        }
+        //
+        @include cus-resolution($custom, $mobile) {
+          width: 330px;
         }
       }
       .img-border {
@@ -265,9 +307,14 @@ section.about {
         width: 350px;
         height: 530px;
         //
+        @include cus-resolution($custom, $mobile) {
+          transform: translate(21%, 5%);
+          width: 330px;
+        }
+        //
         @include max-resolution($mobile) {
-          transform: translate(14%, 6%);
-          width: 280px;
+          transform: translate(12%, 4%);
+          width: 78%;
           height: 420px;
         }
       }
@@ -301,7 +348,7 @@ section.vtour {
     p {
       padding: 0 9% 10px 9%;
       @include max-resolution($mobile) {
-        padding: 0 0 0 1em;
+        padding: 0 1em 0 1em;
       }
     }
   }
@@ -322,6 +369,7 @@ section.vtour {
       filter: grayscale(100%);
       @include max-resolution($mobile) {
         padding: 0;
+        height: 350px;
       }
     }
     // iframe {
@@ -346,6 +394,7 @@ section.vtour {
       //
       @include max-resolution($mobile) {
         width: 100%;
+        height: 350px;
       }
     }
   }
@@ -358,6 +407,11 @@ section.menu {
   @include max-resolution($mobile) {
     padding-top: 30px;
   }
+  //
+  @include cus-resolution($custom, $mobile) {
+    padding-top: 60px;
+  }
+  //
   .menu-container {
     //border: 1px solid aliceblue;
     width: 80%;
@@ -397,6 +451,10 @@ section.menu {
           border: 1px solid $body_text;
           height: 350px;
           width: 280px;
+          @include max-resolution($mobile) {
+            width: 90%;
+            height: 300px;
+          }
         }
       }
       //
@@ -410,10 +468,17 @@ section.menu {
           list-style: none;
           text-transform: uppercase;
           //border: 1px solid white;
+          //
           @include max-resolution($mobile) {
             padding-top: 20px;
             padding-right: 5px;
           }
+          //
+          @include cus-resolution($custom, $mobile) {
+            padding-top: 25px;
+            justify-content: start !important;
+          }
+          //
           dt {
             color: $highlight;
             font-family: $titleText;
@@ -477,6 +542,9 @@ section.gallery {
       @include max-resolution($mobile) {
         padding: 20px 1em;
       }
+      @include cus-resolution($custom, $mobile) {
+        margin-bottom: 25px;
+      }
       h5 {
         font-family: $titleText;
         font-size: 1.563rem !important;
@@ -501,6 +569,10 @@ section.gallery {
         @include max-resolution($mobile) {
           padding-bottom: 10px;
         }
+        //
+        @include cus-resolution($custom, $mobile) {
+          padding-bottom: 20px;
+        }
       }
     }
   }
@@ -516,6 +588,9 @@ section.contact-us {
     @include max-resolution($mobile) {
       width: 100%;
       padding-top: 80px;
+    }
+    @include cus-resolution($custom, $mobile) {
+      padding-top: 60px;
     }
     .contact-header {
       padding: 0 9%;
