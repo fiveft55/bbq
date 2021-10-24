@@ -81,13 +81,9 @@ body {
   //custom scrollbar
 }
 
-// Start here // @root
-//top-section__//
 header {
-  //border: 1px solid coral;
   padding: 20px 10% !important;
   width: 100%;
-  //height: 80px;
   //
   @include max-resolution($mobile) {
     padding: 1em 0 5px 1em !important;
@@ -124,7 +120,6 @@ header {
 
     #logo,
     .lkText {
-      //border: 1px solid coral;
       padding: 0px 8px !important;
       @include max-resolution($mobile) {
         padding: 0 4px !important;
@@ -134,7 +129,6 @@ header {
 }
 
 section.hero {
-  //border: 1px solid coral;
   position: relative;
   @include max-resolution($mobile) {
     padding: 0 !important;
@@ -143,7 +137,6 @@ section.hero {
     img {
       height: 590px;
       width: 80%;
-      //box-shadow: 10px 10px 40px $body;
       @include max-resolution($mobile) {
         padding: 0 !important;
         width: 95%;
@@ -157,12 +150,10 @@ section.hero {
     }
   }
   div.hero-header {
-    //border: 1px solid aliceblue;
     position: absolute;
     bottom: 0;
     left: 18%;
-    transform: translate(0%, 47%); // horizontal and vertical
-    //border: 1px solid white;
+    transform: translate(0%, 47%);
     @include max-resolution($mobile) {
       transform: translate(-18%, 47%);
     }
@@ -177,7 +168,6 @@ section.hero {
       line-height: 100px;
       letter-spacing: 5px;
       @include max-resolution($mobile) {
-        //color: red !important;
         font-size: 2.25rem !important;
         line-height: 40px;
         letter-spacing: 2.5px;
@@ -198,10 +188,8 @@ section.hero {
 }
 
 section.welcome {
-  //border: 1px solid coral;
   width: 100%;
   .welcome-text {
-    //border: 1px solid green;
     width: 80%;
     //
     @include max-resolution($mobile) {
@@ -211,7 +199,6 @@ section.welcome {
     p {
       margin-top: 130px;
       padding: 0px 9%;
-      //border: 1px solid aliceblue;
       font-size: 1.25rem !important;
       word-spacing: 1px;
       //
@@ -232,16 +219,11 @@ section.welcome {
     }
   }
 }
-//__top-section//
-//Middle-section__//
-section.about {
-  //width: 100%;
-  //border: 1px solid coral;
 
+section.about {
   div.w-rap {
     width: 80%;
     padding-top: 100px;
-    //border: 1px solid $highlight;
 
     @include max-resolution($mobile) {
       padding-top: 30px;
@@ -252,7 +234,6 @@ section.about {
     }
 
     article {
-      //border: 1px solid white;
       padding: 30px 10% 0 9%;
       @include max-resolution($mobile) {
         padding: 30px 1em;
@@ -270,9 +251,7 @@ section.about {
       }
     }
 
-    //about-image
     div.about-img {
-      //border: 1px solid white;
       position: relative;
       padding-right: 9%;
 
@@ -321,20 +300,15 @@ section.about {
     }
   }
 }
-//
-//
-section.vtour {
-  //border: 1px solid coral;
 
+section.vtour {
   .vtHeader {
-    //border: 1px solid aliceblue;
     width: 80%;
     padding-top: 100px;
     @include max-resolution($mobile) {
       padding-top: 60px;
       width: 100%;
     }
-    //margin: auto;
     h5 {
       font-family: $titleText;
       font-size: 1.563rem !important;
@@ -356,7 +330,6 @@ section.vtour {
   .vtVideo {
     width: 80%;
     position: relative;
-    //border: 1px solid white;
     @include max-resolution($mobile) {
       width: 100%;
     }
@@ -381,7 +354,6 @@ section.vtour {
     //   }
     // }
     span {
-      //width: 848.55px;
       width: 82%;
       height: 450px;
       border: 1.6px solid $highlight;
@@ -399,10 +371,8 @@ section.vtour {
     }
   }
 }
-//__Middle-section//
-//Lower-section//
+
 section.menu {
-  //border: 1px solid coral;
   padding-top: 100px;
   @include max-resolution($mobile) {
     padding-top: 30px;
@@ -413,7 +383,6 @@ section.menu {
   }
   //
   .menu-container {
-    //border: 1px solid aliceblue;
     width: 80%;
     @include max-resolution($mobile) {
       width: 100%;
@@ -438,14 +407,12 @@ section.menu {
     .menuDetails {
       padding-left: 9%;
       padding-right: 9%;
-      //border: 1px solid aliceblue;
       //
       @include max-resolution($mobile) {
         padding-left: 1em;
       }
       //
       .menu-image {
-        //border: 2px solid green;
         padding-right: 30px;
         img {
           border: 1px solid $body_text;
@@ -459,7 +426,6 @@ section.menu {
       }
       //
       .menu-list {
-        //border: 1px solid $highlight;
         width: 100%;
         //modifying lists
         ul {
@@ -467,7 +433,6 @@ section.menu {
           padding-right: 20px;
           list-style: none;
           text-transform: uppercase;
-          //border: 1px solid white;
           //
           @include max-resolution($mobile) {
             padding-top: 20px;
@@ -500,36 +465,9 @@ section.menu {
     }
   }
 }
-// section.menu-body {
-//   width: 100%;
-//   //height: 750px;
-//   //border: 1px solid coral;
-//   position: relative;
 
-//   div.menu-bg {
-//     z-index: -1;
-//     opacity: 0.45;
-//     position: absolute;
-//     width: inherit;
-//     //border: 1px solid blue;
-//     //
-//     left: 0%;
-//     top: 32%;
-//     //
-//     background-image: url("../images/compressed/bg.jpg");
-//     height: 450px;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: 100% 160%;
-//   }
-// }
-
-//__Lower-section//
-//Gallery-section//
 section.gallery {
-  //border: 1px solid coral;
   .gallery-contain {
-    //border: 1px solid rgb(7, 109, 192);
     width: 80%;
     padding-top: 100px;
     @include max-resolution($mobile) {
@@ -558,7 +496,6 @@ section.gallery {
     }
     .gallery-image {
       padding: 0 9% 0 9%;
-      //border: 1px solid coral;
       @include max-resolution($mobile) {
         padding: 0 1em;
       }
@@ -577,12 +514,9 @@ section.gallery {
     }
   }
 }
-//__Gallery-section//
-//Contact-section//
+
 section.contact-us {
-  //border: 1px solid coral;
   section.infoContact {
-    //border: 1px solid rgb(0, 136, 255);
     width: 80%;
     padding-top: 100px;
     @include max-resolution($mobile) {
@@ -644,15 +578,11 @@ section.contact-us {
     }
   }
 }
-//__Contact-section//
 
-//footer section//
 footer {
-  //border: 1px solid coral;
   .ft-contain {
     padding-top: 50px;
     width: 80%;
-    //border: 1px solid rgb(0, 135, 253);
     //
     @include max-resolution($mobile) {
       padding-top: 20px;
@@ -672,19 +602,16 @@ footer {
     //
     .social-media {
       padding-right: 9%;
-      //border: 1px solid green;
       @include max-resolution($mobile) {
         padding: 0;
       }
 
       ul {
-        //border: 1px solid hotpink;
         list-style: none;
         @include max-resolution($mobile) {
           padding: 5px 1em;
         }
         li {
-          //border: 1px solid black;
           padding: 0 4px;
           margin-left: 4px;
 
@@ -705,4 +632,3 @@ footer {
     }
   }
 }
-//__footer section//
