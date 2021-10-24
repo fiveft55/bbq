@@ -1,0 +1,654 @@
+// Style for BBQ & Grill //
+//
+// @imports
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=Playfair+Display:wght@700&family=Rajdhani:wght@600&display=swap");
+// __variables
+
+/* Colors */
+$body: #0a0d0a;
+$title: #f5f5f5;
+$highlight: #ebb713;
+$body_text: #c9c9c9;
+$social: #00acee; //#4c68d7;
+$insta: #bc2a8d;
+
+/* Fonts */
+$logo: "Rajdhani", sans-serif;
+$titleText: "Montserrat", sans-serif;
+$header: "Playfair Display", serif;
+$text_font: "Open Sans", sans-serif;
+
+/* Desktop Variables */
+$text_res: 376px;
+$mobile: 576px; //412px; //576px; // mobiles and similar
+$tablet: 768px; // Tablets and mini-pc
+$laptop: 992px; // Laptops and normal desktops
+$desktop: 1200px; //Large desktop
+$custom: 1024px;
+
+/* Desktop Variables */
+
+/* Mixin */
+
+@mixin min-resolution($res-arg) {
+  @media (min-width: #{$res-arg}) {
+    @content;
+  }
+}
+
+@mixin max-resolution($res) {
+  @media (max-width: #{$res}) {
+    @content;
+  }
+}
+
+@mixin cus-resolution($max, $mini) {
+  @media (max-width: #{$max}) and (min-width: #{$mini}) {
+    @content;
+  }
+}
+
+/* Mixin using method @include max-resolution(){};*/
+
+// variables__
+//
+// Defaults
+*,
+html {
+  font-family: $text_font;
+  font-weight: normal !important;
+  line-height: 1.875rem; // 30px
+  color: $body_text;
+  font-size: 1rem !important; //later after grid completion
+  @include cus-resolution($custom, $mobile) {
+    font-size: 15px !important;
+  }
+}
+body {
+  background: $body !important;
+  //custom scrollbar
+  &::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $body_text;
+  }
+  //custom scrollbar
+}
+
+header {
+  padding: 20px 10% !important;
+  width: 100%;
+  //
+  @include max-resolution($mobile) {
+    padding: 1em 0 5px 1em !important;
+  }
+
+  nav {
+    animation: nav-load 500ms ease-in;
+    #logo,
+    #logo span {
+      font-family: $logo;
+      font-weight: 600 !important;
+      font-size: 1.313rem !important;
+      color: $title;
+
+      &:hover {
+        span {
+          color: $highlight;
+          transition: 0.5s ease-in;
+        }
+      }
+    }
+
+    .lkText {
+      font-family: $titleText;
+      color: $body_text;
+      font-size: 1.125rem;
+      margin-top: 1px !important;
+
+      &:hover,
+      &:focus {
+        color: $highlight;
+        transition: 0.5s ease-in;
+      }
+    }
+
+    #logo,
+    .lkText {
+      padding: 0px 8px !important;
+      @include max-resolution($mobile) {
+        padding: 0 4px !important;
+      }
+    }
+  }
+}
+
+section.hero {
+  position: relative;
+  @include max-resolution($mobile) {
+    padding: 0 !important;
+  }
+  div.image-container {
+    img {
+      height: 590px;
+      width: 80%;
+      animation: hr-load 1.85s ease-in;
+      @include max-resolution($mobile) {
+        padding: 0 !important;
+        width: 95%;
+        height: 440px;
+      }
+      //
+      @include cus-resolution($custom, $mobile) {
+        height: 440px;
+        width: 90%;
+      }
+    }
+  }
+  div.hero-header {
+    position: absolute;
+    bottom: 0;
+    left: 18%;
+    transform: translate(0%, 47%);
+    animation: hr-load 1s ease-in;
+    @include max-resolution($mobile) {
+      transform: translate(-18%, 47%);
+    }
+
+    h3,
+    h3 span {
+      font-family: $header;
+      font-weight: bold !important;
+      font-size: 5.438rem !important;
+      color: $title;
+      text-transform: uppercase;
+      line-height: 100px;
+      letter-spacing: 5px;
+      @include max-resolution($mobile) {
+        font-size: 2.25rem !important;
+        line-height: 40px;
+        letter-spacing: 2.5px;
+      }
+      //
+      @include cus-resolution($custom, $mobile) {
+        font-size: 3.8rem !important;
+        line-height: 70px;
+        letter-spacing: 3.5px;
+      }
+      //
+    }
+
+    h3 span {
+      color: $highlight;
+    }
+  }
+}
+
+section.welcome {
+  width: 100%;
+  .welcome-text {
+    width: 80%;
+    //
+    @include max-resolution($mobile) {
+      width: 100%;
+    }
+
+    p {
+      margin-top: 130px;
+      padding: 0px 9%;
+      font-size: 1.25rem !important;
+      word-spacing: 1px;
+      //
+      @include cus-resolution($custom, $mobile) {
+        margin-top: 100px;
+        font-size: 17.5px !important;
+        word-spacing: 0px;
+      }
+      //
+      @include max-resolution($mobile) {
+        margin-top: 80px;
+        font-size: 17px !important;
+        padding: 0 1em;
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+section.about {
+  div.w-rap {
+    width: 80%;
+    padding-top: 100px;
+
+    @include max-resolution($mobile) {
+      padding-top: 50px;
+      width: 100%;
+    }
+    @include cus-resolution($custom, $mobile) {
+      padding-top: 30px;
+    }
+
+    article {
+      padding: 30px 10% 0 9%;
+      @include max-resolution($mobile) {
+        padding: 30px 1em;
+      }
+      @include cus-resolution($custom, $mobile) {
+        padding-bottom: 30px;
+      }
+
+      h5 {
+        font-family: $titleText;
+        font-size: 1.563rem !important;
+        color: $highlight;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+      }
+    }
+
+    div.about-img {
+      position: relative;
+      padding-right: 9%;
+
+      @include max-resolution($mobile) {
+        padding-left: 1em;
+      }
+      @include cus-resolution($custom, $mobile) {
+        padding-left: 9%;
+        padding-right: 0;
+      }
+      img {
+        width: 350px;
+        height: 530px;
+        //
+        @include max-resolution($mobile) {
+          width: 90%;
+          height: 420px;
+        }
+        //
+        @include cus-resolution($custom, $mobile) {
+          width: 330px;
+        }
+      }
+      .img-border {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(7%, 5%);
+        //
+        border: 1px solid $body_text;
+        z-index: -1;
+        width: 350px;
+        height: 530px;
+        //
+        @include cus-resolution($custom, $mobile) {
+          transform: translate(21%, 5%);
+          width: 330px;
+        }
+        //
+        @include max-resolution($mobile) {
+          transform: translate(12%, 4%);
+          width: 78%;
+          height: 420px;
+        }
+      }
+    }
+  }
+}
+
+section.vtour {
+  .vtHeader {
+    width: 80%;
+    padding-top: 100px;
+    @include max-resolution($mobile) {
+      padding-top: 60px;
+      width: 100%;
+    }
+    h5 {
+      font-family: $titleText;
+      font-size: 1.563rem !important;
+      color: $highlight;
+      text-transform: uppercase;
+      padding: 40px 9% 20px 9%;
+      @include max-resolution($mobile) {
+        padding: 20px 16px;
+      }
+    }
+    p {
+      padding: 0 9% 10px 9%;
+      @include max-resolution($mobile) {
+        padding: 0 1em 0 1em;
+      }
+    }
+  }
+  //
+  .vtVideo {
+    width: 80%;
+    position: relative;
+    @include max-resolution($mobile) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 450px;
+      padding-left: 9%;
+      padding-right: 9%;
+      filter: grayscale(100%);
+      @include max-resolution($mobile) {
+        padding: 0;
+        height: 350px;
+      }
+    }
+    // iframe {
+    //   padding: 0 9%;
+    //   filter: grayscale(100%);
+    //   &:hover,
+    //   &:focus {
+    //     filter: grayscale(0%) !important;
+    //   }
+    // }
+    span {
+      width: 82%;
+      height: 450px;
+      border: 1.6px solid $highlight;
+      //
+      position: absolute;
+      //
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, 0);
+      //
+      @include max-resolution($mobile) {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  }
+}
+
+section.menu {
+  padding-top: 100px;
+  @include max-resolution($mobile) {
+    padding-top: 30px;
+  }
+  //
+  @include cus-resolution($custom, $mobile) {
+    padding-top: 60px;
+  }
+  //
+  .menu-container {
+    width: 80%;
+    @include max-resolution($mobile) {
+      width: 100%;
+      padding-top: 30px;
+    }
+    //
+    .menuHeader {
+      padding: 40px 9% 20px 9%;
+      @include max-resolution($mobile) {
+        padding-left: 1em;
+      }
+      h5 {
+        font-family: $titleText;
+        font-size: 1.563rem !important;
+        color: $highlight;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+      }
+      //
+    }
+    //
+    .menuDetails {
+      padding-left: 9%;
+      padding-right: 9%;
+      //
+      @include max-resolution($mobile) {
+        padding-left: 1em;
+      }
+      //
+      .menu-image {
+        padding-right: 30px;
+        img {
+          border: 1px solid $body_text;
+          height: 350px;
+          width: 280px;
+          @include max-resolution($mobile) {
+            width: 90%;
+            height: 300px;
+          }
+        }
+      }
+      //
+      .menu-list {
+        width: 100%;
+        //modifying lists
+        ul {
+          padding-left: 0;
+          padding-right: 20px;
+          list-style: none;
+          text-transform: uppercase;
+          //
+          @include max-resolution($mobile) {
+            padding-top: 20px;
+            padding-right: 5px;
+          }
+          //
+          @include cus-resolution($custom, $mobile) {
+            padding-top: 25px;
+            justify-content: start !important;
+          }
+          //
+          dt {
+            color: $highlight;
+            font-family: $titleText;
+            font-weight: 600 !important;
+            font-size: 1.25rem !important;
+            color: $highlight;
+            padding-bottom: 0.5em;
+          }
+
+          li,
+          dt {
+            &:hover {
+              cursor: default;
+              color: $highlight;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.gallery {
+  .gallery-contain {
+    width: 80%;
+    padding-top: 100px;
+    @include max-resolution($mobile) {
+      width: 100%;
+      padding-top: 60px;
+    }
+    //
+    .gallery-header {
+      padding: 0 9% 0 9%;
+      @include max-resolution($mobile) {
+        padding: 20px 1em;
+      }
+      @include cus-resolution($custom, $mobile) {
+        margin-bottom: 25px;
+      }
+      h5 {
+        font-family: $titleText;
+        font-size: 1.563rem !important;
+        color: $highlight;
+        text-transform: uppercase;
+        padding-bottom: 40px;
+        @include max-resolution($mobile) {
+          padding-bottom: 10px;
+        }
+      }
+    }
+    .gallery-image {
+      padding: 0 9% 0 9%;
+      @include max-resolution($mobile) {
+        padding: 0 1em;
+      }
+      //
+      img {
+        height: 350px;
+        width: 100%;
+        @include max-resolution($mobile) {
+          padding-bottom: 10px;
+        }
+        //
+        @include cus-resolution($custom, $mobile) {
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+section.contact-us {
+  section.infoContact {
+    width: 80%;
+    padding-top: 100px;
+    @include max-resolution($mobile) {
+      width: 100%;
+      padding-top: 80px;
+    }
+    @include cus-resolution($custom, $mobile) {
+      padding-top: 60px;
+    }
+    .contact-header {
+      padding: 0 9%;
+      @include max-resolution($mobile) {
+        padding: 0 1em;
+      }
+      h5 {
+        font-family: $titleText;
+        font-size: 1.563rem !important;
+        color: $highlight;
+        text-transform: uppercase;
+        padding-bottom: 30px;
+      }
+    }
+    //
+    .contact-details {
+      padding: 0 9% 10px 9%;
+      @include max-resolution($mobile) {
+        padding: 0 0 10px 1em;
+      }
+    }
+    //
+    section.gmap {
+      padding: 0 9%;
+      width: 100%;
+      @include max-resolution($mobile) {
+        padding: 0 1em;
+      }
+      //
+      .bdr {
+        width: 50px;
+        height: 5px;
+        background-color: $highlight;
+        border: 1px solid $highlight;
+      }
+      p {
+        padding-top: 0.6em;
+      }
+      //
+      iframe {
+        width: inherit;
+        height: 300px;
+        filter: grayscale(100%);
+        //
+        &:focus,
+        &:hover {
+          filter: none !important;
+          transition: 0.6s ease-in;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  .ft-contain {
+    padding-top: 50px;
+    width: 80%;
+    //
+    @include max-resolution($mobile) {
+      padding-top: 20px;
+      width: 100%;
+    }
+    //
+    .copyright {
+      padding-left: 9%;
+      @include max-resolution($mobile) {
+        padding-left: 1em;
+      }
+      &:hover {
+        cursor: default;
+        color: $highlight;
+      }
+    }
+    //
+    .social-media {
+      padding-right: 9%;
+      @include max-resolution($mobile) {
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+        @include max-resolution($mobile) {
+          padding: 5px 1em;
+        }
+        li {
+          padding: 0 4px;
+          margin-left: 4px;
+
+          @include max-resolution($mobile) {
+            padding: 4px;
+          }
+          //
+          &:hover {
+            cursor: pointer;
+            color: $social;
+            transition: 0.5s ease-in;
+          }
+          &.insta:hover {
+            color: $insta;
+          }
+        }
+      }
+    }
+  }
+}
+
+// keyframes //
+@keyframes nav-load {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes hr-load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1s;
+  }
+}

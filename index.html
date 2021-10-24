@@ -10,13 +10,15 @@
 
     <!--bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--aos-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
     <header class="d-flex container-md flex-column">
-        <nav class="navbar">
+        <nav class="navbar" id="nav">
               <ul class="nav d-flex flex-column flex-sm-row w-100 justify-content-between">
-                  <li class="nav-item"><a class="nav-link" id="logo" href="#">Barbeque <span>&</span> Grill</a></li>
+                  <li class="nav-item"><a class="nav-link" id="logo" href="./index.html">Barbeque <span>&</span> Grill</a></li>
                   <div class="d-flex">
                   <li class="nav-item"><a href="#gallery" class="nav-link lkText">Gallery</a></li>
                   <li class="nav-item"><a href="#contact" class="nav-link lkText">Contact Us</a></li>
@@ -33,29 +35,29 @@
         </div>
     </section>
     <section class="welcome container-md d-flex justify-content-center">
-        <div class="welcome-text">
+        <div class="welcome-text" data-aos="fade-up">
             <p>Welcome to out official website for Barbeque & Grill,<br/> a cozy hideout for your special appetite.</p>
         </div>
     </section>
     <section class="about container-md d-flex justify-content-center">
         <div class="w-rap d-flex flex-column flex-lg-row">
-            <article> 
+            <article data-aos="fade-right"> 
                 <h5>about us</h5> 
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ex ipsa praesentium odio voluptates totam? Recusandae, blanditiis? Ad, corporis vero cum, voluptate suscipit animi, omnis ratione ipsa est minima beatae?</p> 
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque ex ipsa praesentium odio voluptates totam? Recusandae, blanditiis? Ad, corporis vero cum, voluptate suscipit animi, omnis ratione ipsa est minima beatae? Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> 
             </article>
-            <div class="about-img">
+            <div class="about-img" data-aos="fade-left">
                 <img src="./images/compressed/about_theme.jpg" alt="about-image">
                 <div class="img-border"></div>
             </div>
         </div>
     </section>
     <section class="vtour container-md d-flex flex-column">
-        <div class="vtHeader m-auto">
+        <div class="vtHeader m-auto" data-aos="zoom-out">
             <h5>Virtual Tour</h5>
             <p>A pre-recorded session for our customers to be familiar with us.</p>
         </div>
-        <div class="vtVideo m-auto">
+        <div class="vtVideo m-auto" data-aos="fade-up">
             <img src="./images/compressed/video.jpg" alt="video">
             <span class="Disabled"></span>
         </div>
@@ -64,15 +66,15 @@
         <!--<div class="menu-bg"></div> background image-->
         <section class="menu container-md d-flex justify-content-center">
             <div class="menu-container d-flex flex-column">
-                <div class="menuHeader">
+                <div class="menuHeader" data-aos="zoom-out">
                     <h5>Our Menu</h5>
                     <p>Finest meals for your appetite.</p>
                 </div>
                 <div class="menuDetails d-flex flex-column flex-lg-row">
-                    <div class="menu-image">
+                    <div class="menu-image" data-aos="fade-right">
                         <img src="./images/compressed/mtheme.jpg" alt="menu-theme">
                     </div>
-                    <div class="menu-list">
+                    <div class="menu-list" data-aos="fade-left">
                         <ul class="d-flex flex-row justify-content-evenly">
                             <ul><dt>Pork</dt> 
                                 <li>bacon</li>
@@ -102,11 +104,11 @@
     </section>
     <section class="gallery d-flex container-md justify-content-center" id="gallery">
         <div class="gallery-contain">
-            <div class="gallery-header">
+            <div class="gallery-header" data-aos="zoom-out">
                 <h5>Our Gallery</h5>
             </div>
             <div class="gallery-image">
-                <div class="row py-lg-2">
+                <div class="row py-lg-2" data-aos="fade-up" data-aos-offset="300">
                     <div class="col-sm col-md-6 col-lg-4">
                          <img src="./images/compressed/fl.jpg" alt="flower-image">
                     </div>
@@ -118,7 +120,7 @@
                     </div>
                 </div>
                 <!--Second row-->
-                <div class="row py-2">
+                <div class="row py-2" data-aos="fade-up" data-aos-offset="300">
                     <div class="col-sm col-md-12 col-lg-4">
                          <img src="./images/compressed/coal.jpg" alt="coal-image">
                     </div>
@@ -147,7 +149,7 @@
             <section class="gmap">
                 <div class="bdr"></div>
                 <p>Find us on google map:</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14131.500859404807!2d84.41997759999997!3d27.690251400000022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92de245797a63af!2sBITS%20-Bitmap%20IT%20Solution%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1633523182061!5m2!1sen!2snp"style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14131.500859404807!2d84.41997759999997!3d27.690251400000022!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x92de245797a63af!2sBITS%20-Bitmap%20IT%20Solution%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1633523182061!5m2!1sen!2snp"style="border:0;" allowfullscreen="" loading="lazy" data-aos="flip-up"></iframe>
             </section>
         </section>
     </section>
@@ -164,7 +166,13 @@
         </div>
     </footer>
     <!--ends-->
-    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 240, //default: 120
+            duration: 800
+        });
+    </script> 
 </body>
 
 </html>
