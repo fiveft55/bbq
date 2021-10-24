@@ -50,6 +50,11 @@ header {
   }
 }
 
+header nav {
+  -webkit-animation: nav-load 500ms ease-in;
+          animation: nav-load 500ms ease-in;
+}
+
 header nav #logo,
 header nav #logo span {
   font-family: "Rajdhani", sans-serif;
@@ -103,6 +108,8 @@ section.hero {
 section.hero div.image-container img {
   height: 590px;
   width: 80%;
+  -webkit-animation: hr-load 1.85s ease-in;
+          animation: hr-load 1.85s ease-in;
 }
 
 @media (max-width: 576px) {
@@ -126,6 +133,8 @@ section.hero div.hero-header {
   left: 18%;
   -webkit-transform: translate(0%, 47%);
           transform: translate(0%, 47%);
+  -webkit-animation: hr-load 1s ease-in;
+          animation: hr-load 1s ease-in;
 }
 
 @media (max-width: 576px) {
@@ -215,7 +224,7 @@ section.about div.w-rap {
 
 @media (max-width: 576px) {
   section.about div.w-rap {
-    padding-top: 30px;
+    padding-top: 50px;
     width: 100%;
   }
 }
@@ -729,5 +738,45 @@ footer .ft-contain .social-media ul li:hover {
 
 footer .ft-contain .social-media ul li.insta:hover {
   color: #bc2a8d;
+}
+
+@-webkit-keyframes nav-load {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes nav-load {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes hr-load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1s;
+  }
+}
+
+@keyframes hr-load {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1s;
+  }
 }
 /*# sourceMappingURL=style.css.map */
